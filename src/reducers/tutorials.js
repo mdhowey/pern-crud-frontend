@@ -9,9 +9,9 @@ import {
 const initialState = [];
 
 function tutorialReducer(tutorials = initialState, action) {
-  const { type, payload } = action; 
+  const { type, payload } = action;
 
-  switch(type) {
+  switch (type) {
     case CREATE_TUTORIAL:
       return [...tutorials, payload];
 
@@ -29,7 +29,7 @@ function tutorialReducer(tutorials = initialState, action) {
           return tutorial;
         }
       });
-    
+
     case DELETE_TUTORIAL:
       return tutorials.filter(({ id }) => id !== payload.id);
 

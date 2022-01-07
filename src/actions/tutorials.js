@@ -8,7 +8,7 @@ import {
 
 import TutorialDataService from "../services/tutorial.service";
 
-// POST new tutorial to front end
+// POST new tutorial to API
 export const createTutorial = (title, description) => async (dispatch) => {
   try {
     const res = await TutorialDataService.create({ title, description });
@@ -24,7 +24,7 @@ export const createTutorial = (title, description) => async (dispatch) => {
   }
 };
 
-// GET all tutorials for front end
+// GET all tutorials from API
 export const retrieveTutorials = () => async (dispatch) => {
   try {
     const res = await TutorialDataService.getAll();
@@ -38,7 +38,7 @@ export const retrieveTutorials = () => async (dispatch) => {
   }
 };
 
-// PUT update tutorial for front end
+// PUT update tutorial in API
 export const updateTutorial = (id, data) => async (dispatch) => {
   try {
     const res = await TutorialDataService.update(id, data);
@@ -54,7 +54,7 @@ export const updateTutorial = (id, data) => async (dispatch) => {
   }
 };
 
-// DELETE tutorial by ID for front end
+// DELETE tutorial by ID from API
 export const deleteTutorial = (id) => async (dispatch) => {
   try {
     await TutorialDataService.delete(id);
@@ -68,7 +68,7 @@ export const deleteTutorial = (id) => async (dispatch) => {
   }
 };
 
-// DELETE all tutorials for front end
+// DELETE all tutorials from API
 export const deleteAllTutorials = () => async (dispatch) => {
   try {
     const res = await TutorialDataService.deleteAll();
@@ -84,7 +84,7 @@ export const deleteAllTutorials = () => async (dispatch) => {
   }
 };
 
-// GET tutorials by title for front end
+// GET tutorials by title from API
 export const findTutorialsByTitle = (title) => async (dispatch) => {
   try {
     const res = await TutorialDataService.findByTitle(title);
